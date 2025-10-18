@@ -6,8 +6,17 @@ namespace ProgressiveTaxCalculatorV3
     {
         static void Main(string[] args)
         {
-            Console.Write("請輸入您的年收入（元）：");
-            decimal income = decimal.Parse(Console.ReadLine());
+            decimal income;
+            while (true)
+            {
+                Console.Write("請輸入您的年收入（元）：");
+                if (decimal.TryParse(Console.ReadLine(), out income) && income >= 0)
+                {
+                    break;
+                }
+
+                Console.WriteLine("輸入無效，請輸入非負數值。");
+            }
 
             decimal tax;
             decimal marginalRate;
