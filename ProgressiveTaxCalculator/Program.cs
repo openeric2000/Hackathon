@@ -22,10 +22,12 @@ namespace ProgressiveTaxCalculatorV3
             decimal marginalRate;
             CalculateTax(income, out tax, out marginalRate);
 
-            Console.WriteLine($"\n年收入：{income:N0} 元");
-            Console.WriteLine($"應納稅額：{tax:N2} 元");
-            Console.WriteLine($"適用稅率（邊際稅率）：{marginalRate:P0}");
-            Console.WriteLine($"實際稅率（平均稅率）：{(tax / income):P2}");
+            Console.WriteLine("\n年收入：{0:N0} 元", income);
+            Console.WriteLine("應納稅額：{0:N2} 元", tax);
+            Console.WriteLine("適用稅率（邊際稅率）：{0:P0}", marginalRate);
+
+            decimal averageRate = income == 0 ? 0 : tax / income;
+            Console.WriteLine("實際稅率（平均稅率）：{0:P2}", averageRate);
         }
 
         static void CalculateTax(decimal income, out decimal tax, out decimal marginalRate)
