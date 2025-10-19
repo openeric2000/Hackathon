@@ -36,13 +36,9 @@ namespace ProgressiveTaxCalculatorV3
             decimal[] rates = { 0.05m, 0.12m, 0.20m, 0.30m, 0.40m, 0.50m };
             decimal[] quickDeduction = { 0m, 37800m, 134600m, 376600m, 829600m, 1345100m };
 
-            int level;
-            if (income <= brackets[0]) level = 0;
-            else if (income <= brackets[1]) level = 1;
-            else if (income <= brackets[2]) level = 2;
-            else if (income <= brackets[3]) level = 3;
-            else if (income <= brackets[4]) level = 4;
-            else level = 5;
+            int level = Enumerable.Range(0, brackets.Length).FirstOrDefault(i => income <= brackets[i], brackets.Length);
+
+            if (level >= rates.Length) level = rates.Length - 1;
 
             marginalRate = rates[level];
             tax = income * rates[level] - quickDeduction[level];
