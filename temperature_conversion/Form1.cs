@@ -26,66 +26,19 @@ namespace temperature_conversion
         {
             
         }
-
-       
-        private void button_1_Click(object sender, EventArgs e)
+        private void NumberButton_Click(object sender, EventArgs e)
         {
-            AppendNumber("1");
-        }
-        private void button_2_Click(object sender, EventArgs e)
-        {
-            AppendNumber("2");
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
         }
 
-        private void button_3_Click(object sender, EventArgs e)
-        {
-            AppendNumber("3");
-        }
-
-        private void button_4_Click(object sender, EventArgs e)
-        {
-            AppendNumber("4");
-        }
-
-        private void button_5_Click(object sender, EventArgs e)
-        {
-            AppendNumber("5");
-        }
-
-        private void button_6_Click(object sender, EventArgs e)
-        {
-            AppendNumber("6");
-        }
-
-        private void button_7_Click(object sender, EventArgs e)
-        {
-            AppendNumber("7");
-        }
-
-        private void button_8_Click(object sender, EventArgs e)
-        {
-            AppendNumber("8");
-        }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
 
-        private void button_9_Click(object sender, EventArgs e)
-        {
-            AppendNumber("9");
-        }
-
-        private void button_0_Click(object sender, EventArgs e)
-        {
-            AppendNumber("0");
-        }
-
-        private void button_dot_Click(object sender, EventArgs e)
-        {
-            AppendNumber(".");
-        }
+        
 
         private void button_minus_Click(object sender, EventArgs e)
         {
